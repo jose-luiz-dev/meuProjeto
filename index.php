@@ -1,5 +1,6 @@
 <?php
 
+require_once 'lib/database/Conexao.php';
 require_once 'app/core/Core.php';
 require_once 'app/controller/HomeController.php';
 require_once 'app/controller/ErroController.php';
