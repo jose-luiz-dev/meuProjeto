@@ -5,13 +5,21 @@ class HomeController
 
     public function index()
     {
-        include_once 'app/view/home.html';
 
         try {
-
             $exibirConsulta = Consulta::exibeConsulta();
 
-            var_dump($exibirConsulta);
+            $loader = new \Twig\Loader\FilesystemLoader('app/view');
+            $twig = new \Twig\Environment($loader);
+            $template = $twig->load('home.html');
+
+            $parametro = array();
+            $parametro['usuarios']= $exibirConsulta;
+
+            $conteudo = $template->render($parametro);
+            echo $conteudo;
+
+            /*var_dump($exibirConsulta);*/
             
         } catch (Exception $e) {
             echo $e->getMessage();
