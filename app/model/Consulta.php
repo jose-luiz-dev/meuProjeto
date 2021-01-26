@@ -6,9 +6,11 @@ class Consulta{
         
         $conn = conexao::getConn();
 
-        $sql = "SELECT * FROM usuario_acesso ORDER BY id";
+        $sql = "SELECT * FROM usuario_acesso ORDER BY id DESC";
         $sql = $conn->prepare($sql);
         $sql->execute();
+
+       
 
         $resultado = array();
 

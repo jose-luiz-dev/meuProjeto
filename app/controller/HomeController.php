@@ -18,8 +18,6 @@ class HomeController
 
             $conteudo = $template->render($parametro);
             echo $conteudo;
-
-            /*var_dump($exibirConsulta);*/
             
         } catch (Exception $e) {
             echo $e->getMessage();
